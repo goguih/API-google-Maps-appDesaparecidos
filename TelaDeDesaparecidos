@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="imagem/png" href="https://i.imgur.com/xTOFzOY.png"/>
+<Title>Desaparecidos</Title>
+</head>
+<body>
+  <header>
+  <div class="container">
+    <h1 class="logo"></h1>
+
+    <nav>
+      <ul>
+        <li><a href="googleAPI.html">Mapa de Desaparecidos</a></li>
+        <li><a href="#">Concentração de Desaparecidos</a></li>
+        <li><a href="#">Perfil</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+  </div>
+  <div class="column">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://i.imgur.com/IoVLYnQ.jpg" alt="Clinica" style="width:450px;height:580px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>LOURENÇO TESTA</h1> 
+          <p>Mãe:MARCIA DA CRUZ</p>
+          <p>Sexo:Masculino</p>
+          <p>Idade:19 anos</p>
+          <p>Data Nascimento:20/06/2002</p>
+          <p>Data Desaparecimento:01/09/2019</p>
+          <p>Natural de:CAMPINAS -SP</p>
+          <p>Altura:168</p>
+          <p>Olhos:CAST.ESCURO</p>
+          <p>Pele:BRANCA</p>
+          <p>Cabelo:CAST.CLARO </p>
+          <li><a href="#">Ver no mapa</a></li>
+        </div>
+        Pai:
+
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://i.imgur.com/Lgzz4sE.jpg" alt="Clinica" style="width:450px;height:580px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>CARLOS AUGUSTO</h1> 
+          <p>Pai:SILAS SOUZA RIBEIRO</p>
+          <p>Mãe:MARIA ELINEIDE DA SILVA</p>
+          <p>Sexo:Masculino</p>
+          <p>Idade:23 anos</p>
+          <p>Data Nascimento:08/04/1991</p>
+          <p>Data Desaparecimento:05/06/2014</p>
+          <p>Natural de:CAMPINAS-SP</p>
+          <p>Altura:170</p>
+          <p>Olhos:CAST.ESCURO</p>
+          <p>Pele:BRANCA</p>
+          <p>Cabelo:CAST.CLARO</p>
+         <li><a href="#">Ver no mapa</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://i.imgur.com/EkEYysc.jpg" alt="Clinica" style="width:450px;height:580px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>Yuri Fernando</h1> 
+          <p>Pai:LUCIANO MAURICIO DOS SANTOS</p>
+          <p>Mãe:LUANA MARTINS DE SOUZA</p>
+          <p>Sexo:Masculino</p>
+          <p>Idade:24 anos</p>
+          <p>Data Nascimento:31/03/1995</p>
+          <p>Data Desaparecimento:21/10/2019</p>
+          <p>Natural de:CAMPINAS -SP</p>
+          <p>Altura:170</p>
+          <p>Olhos:CAST.ESCURO</p>
+          <p>Pele:BRANCA</p>
+          <p>Cabelo:CAST.ESCURO</p>
+          <li><a href="#">Ver no mapa</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://i.imgur.com/Cbw5wg0.jpg" alt="Clinica" style="width:450px;height:580px;">
+      </div>
+      <div class="flip-card-back">
+        <h1>Guilherme de Oliveira</h1> 
+        <p>Mãe:Maria Vitalina Dos Santos</p>
+        <p>Sexo:Masculino</p>
+        <p>Idade:24 anos</p>
+        <p>Data Nascimento:25/06/1994</p>
+        <p>Data Desaparecimento:05/03/2018</p>
+        <p>Natural de:CAMPINAS-SP</p>
+        <p>Altura:170</p>
+        <p>Olhos:CAST.ESCURO</p>
+        <p>Pele:BRANCA</p>
+        <p>Cabelo:CAST.CLARO</p>
+        <li><a href="googleAPI.html">Ver no mapa</a></li>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <table id="myTable">
+<p></p>
+
+<script>
+  function myFunction() {
+    var input, filter, table, h3, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("h3");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("h3")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+  </script>
+
+</body>
+</html>
+
+
+<style>
+
+#myInput {
+background-image: url('/css/searchicon.png');
+background-position: 10px 10px;
+background-repeat: no-repeat;
+width: 100%;
+font-size: 16px;
+padding: 12px 20px 12px 40px;
+border: 1px solid #ddd;
+margin-bottom: 12px;
+}
+
+body {
+margin: 0;
+background: rgb(255, 251, 251);
+font-family: 'Work Sans', sans-serif;
+font-weight: 800;
+}
+
+.container {
+width: 80%;
+margin: 0 auto;
+}
+
+header {
+background: #000000;
+}
+
+header::after {
+content: '';
+display: table;
+clear: both;
+}
+
+.logo {
+float: left;
+padding: 10px 0;
+}
+
+nav {
+float: right;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+display: inline-block;
+margin-left: 70px;
+padding-top: 23px;
+
+position: relative;
+}
+
+nav a {
+color: rgb(207, 0, 0);
+text-decoration: none;
+text-transform: uppercase;
+font-size: 14px;
+}
+
+nav a:hover {
+color: rgb(255, 255, 255);
+}
+
+nav a::before {
+content: '';
+display: block;
+height: 5px;
+background-color: rgb(250, 250, 250);
+
+position: absolute;
+top: 0;
+width: 0%;
+
+transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+background-color: transparent;
+width: 450px;
+height: 580px;
+perspective: 1000px;
+}
+
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.6s;
+transform-style: preserve-3d;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+position: absolute;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.flip-card-front {
+background-color: rgb(0, 0, 0);
+color: black;
+}
+
+.flip-card-back {
+background-color: #b92929;
+color: rgb(0, 0, 0);
+transform: rotateY(180deg);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Colunas*/
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+
+</style>
