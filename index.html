@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="imagem/png" href="https://i.imgur.com/llFftiv.png"/>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/index.css">
+
+<Title>Desaparecidos</Title>
+</head>
+  <body>
+<header>
+  <div class="container-logo">
+    <div class="logo-imagem">
+      <img src="https://i.imgur.com/Zf92voQ.gif" alt="" style="height: 60px; width: 100px;">
+    </div>
+     <div class="logo-text">
+     <h1>OBSOL</h1>
+    </div>  
+  </div>
+  <div class="menu">
+    <ul>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </ul>   
+  </div>
+</header>
+
+<!-- popup de Login -->
+
+<div id="modal-login" class="modal-container">
+  <div class="modal">
+    <button class="fechar">x</button>
+    <div class="container-login">
+      <div class="card-login">
+        <h1>OBSOL</h1>
+        <div id="msgErrorLogin"></div>
+        <div id="msgSuccessLogin"></div>
+        <div class="label-float">
+          <input type="text" id="emailLogin" placeholder="" required>
+          <label  id='labelEmailLogin' for="email">E-mail</label>
+        </div>
+        <div class="label-float">
+          <input type="password" id="passwordLogin" placeholder="" required>
+          <label id = 'labelSenhaLogin' for="password">Senha</label>
+          <i id="verSenhaLogin"  class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+        <div class="justify-center">
+          <button onclick="logar()" class="btn btn-secondary" >Entrar</button>
+        </div>
+        <div class="justify-center">
+          <hr>
+        </div>
+        <div class="p-change">
+        <p>Não tem conta?</p>
+        <button class="btn btn-third">Cadastrar</a>
+      </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- popup de Cadastro -->
+    
+<div id="modal-cadastro" class="modal-container">
+  <div class="modal">
+    <button class="fechar">x</button>
+    <div class="container-login">
+      <div class="card-login">
+        <div class="text-count">
+        <h2>Crie sua conta grátis</h2>
+        </div>
+        <h2>OBSOL</h2>
+        <div id="msgErrorCadastro"></div>
+        <div id="msgSuccessCadastro"></div>
+        <div class="label-float">
+          <input type="text" id="name" placeholder="" required>
+          <label id="labelNome" for="name">Nome</label>
+        </div>
+        <div class="label-float">
+          <input type="text" id="emailCadastro" name="email" placeholder="" onkeypress="notSpace()" required>
+          <label id="labelEmailCadastro" for="email">E-mail</label>
+        </div>
+        <div class="label-float">
+          <input type="text" id="confEmailCadastro" placeholder="" onpaste="return false" onkeypress="notSpace()" ondrop="return false" required>
+          <label id="labelConfEmailCadastro" for="confEmail">Confirmar E-mail</label>
+        </div>
+        <div class="label-float">
+          <input type="password" id="passwordCadastro" placeholder="" onkeypress="notSpace()" required>
+          <label id="labelSenhaCadastro" for="password">Senha</label> 
+          <i id="verSenhaCadastro"  class="fa fa-eye" aria-hidden="true"></i>
+          <span id="forcaSenhaFraca"></span>
+          <span id="forcaSenhaMedia"></span>
+          <span id="forcaSenhaForte"></span>
+          <span id="forcaSenhaExcelente"></span>
+        </div>
+        <div class="label-float">
+          <input type="password" id="confPasswordCadastro" placeholder="" onpaste="return false" onkeypress="notSpace()" ondrop="return false" required>
+          <label id="labelConfSenhaCadastro"for="confPassword">Confirmar senha</label>
+          <i id="verConfSenhaCadastro"  class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+        <div class="justify-center">
+          <button  onclick='cadastrar()' class="btn btn-secondary">Cadastrar</button>
+        </div>     
+      </div>
+    </div>
+  </div>
+    </div>
+<input type="text" id="filtro" class="busca"  placeholder="Procurar Conteúdo..." title="Digite Conteúdo">
+<div class="column">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://i.imgur.com/IoVLYnQ.jpg" alt="">
+      </div>
+      <div class="flip-card-back">
+        <div class="flip-card-text">
+        <h1>LOURENÇO TESTA</h1> 
+        <p>Pais: Márcia Oliveira</p>
+        <p>Sexo: Masculino</p>
+        <p>Idade: 19 anos</p>
+        <p>Data Nascimento: 20/06/2002</p>
+        <p>Desaparecimento: 01/09/2019</p>
+        <p>Natural de: Campinas (SP)</p>
+        <p>Altura: 168</p>
+        <p>Olhos: Castanho Escuro</p>
+        <p>Pele: Branca</p>
+        <p>Cabelo: Castanho Escuro</p>     
+      </div>
+      </div>
+    </div>
+  </div>
+</div>  
+<div class="column">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://i.imgur.com/Lgzz4sE.jpg" alt="">
+      </div>
+      <div class="flip-card-back">
+        <div class="flip-card-text">
+        <h1>CARLOS AUGUSTO</h1> 
+        <p>Pais: Maria da Silva e Silas Ribeiro</p>
+        <p>Sexo: Masculino</p>
+        <p>Idade: 23 anos</p>
+        <p>Data Nascimento: 08/04/1991</p>
+        <p>Desaparecimento: 05/06/2014</p>
+        <p>Natural de: Campinas (SP)</p>
+        <p>Altura: 174</p>
+        <p>Olhos: Castanho Escuro</p>
+        <p>Pele: Branca</p>
+        <p>Cabelo: Castanho Escuro</p>    
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://i.imgur.com/EkEYysc.jpg" alt="">
+      </div>
+      <div class="flip-card-back">
+        <div class="flip-card-text">
+        <h1>YURI FERNANDO</h1> 
+        <p>Pais: Luana Martins e Luciano Maurício</p>
+        <p>Sexo: Masculino</p>
+        <p>Idade: 24 anos</p>
+        <p>Data Nascimento: 31/03/1995</p>
+        <p>Desaparecimento: 21/10/2019</p>
+        <p>Natural de: Campinas (SP)</p>
+        <p>Altura: 175</p>
+        <p>Olhos: Castanho Escuro</p>
+        <p>Pele: Branca</p>
+        <p>Cabelo: Castanho Escuro</p> 
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="https://i.imgur.com/Cbw5wg0.jpg" alt="">
+    </div>
+    <div class="flip-card-back">
+      <div class="flip-card-text">
+      <h1>GUILHERME DE OLIVEIRA</h1> 
+      <p>Pais: Maria Vitalina dos Santos</p>
+      <p>Sexo: Masculino</p>
+      <p>Idade: 24 anos</p>
+      <p>Data Nascimento: 25/06/1994</p>
+      <p>Desaparecimento: 05/03/2018</p>
+      <p>Natural de: Campinas (SP)</p>
+      <p>Altura: 178</p>
+      <p>Olhos: Castanho Escuro</p>
+      <p>Pele: Branca</p>
+      <p>Cabelo: Castanho Escuro</p> 
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="columnUser">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="" alt="Imagem do desaparecido">
+      </div>
+      <div class="flip-card-back">
+        <div class="flip-card-text">
+        <h1 id=nomeDesaparecido></h1> 
+        <p id="nomePais"></p>
+        <p id= "sexo"></p>
+        <p id="idade"></p>
+        <p id="dataNascimento"></p>
+        <p id="dataDesaparecimento"></p>
+        <p id="naturalidade"></p>
+        <p id="altura"></p>
+        <p id="olhos"></p>
+        <p id="pele"></p>
+        <p id="cabelo"></p> 
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+// Recebendo a denúncia
+
+let denunciaSave = JSON.parse(localStorage.getItem('denunciaSave'))
+let dateBRNascimento = denunciaSave.dataNascimento.split('/').reverse().join('-');
+dateBRNascimento = denunciaSave.dataNascimento.split('-').reverse().join('/');
+let dateBRDesaparecimento = denunciaSave.dataDesaparecimento.split('/').reverse().join('-');
+dateBRDesaparecimento = denunciaSave.dataDesaparecimento.split('-').reverse().join('/');
+
+document.querySelector('#nomeDesaparecido').innerHTML = denunciaSave.nome.toUpperCase();
+document.querySelector('#nomePais').innerHTML = 'Pais: ' + denunciaSave.nomeMae + ' e ' +  denunciaSave.nomePai;
+document.querySelector('#sexo').innerHTML = 'Sexo: ' + denunciaSave.sexo;
+document.querySelector('#idade').innerHTML = 'Idade: ' + denunciaSave.idade;
+document.querySelector('#dataNascimento').innerHTML = 'Data de Nascimento: ' + dateBRNascimento;
+document.querySelector('#dataDesaparecimento').innerHTML = 'Desaparecimento: ' + dateBRDesaparecimento;
+document.querySelector('#naturalidade').innerHTML = 'Natural de: ' + denunciaSave.naturalidade;
+document.querySelector('#altura').innerHTML = 'Altura: ' + denunciaSave.altura;
+document.querySelector('#olhos').innerHTML = 'Olhos: ' + denunciaSave.olhos;
+document.querySelector('#pele').innerHTML = 'Pele: ' + denunciaSave.pele;
+document.querySelector('#cabelo').innerHTML = 'Cabelo: ' + denunciaSave.cabelos;
+
+//Não permitir espaço
+
+function notSpace(){
+  if(event.keyCode == 32)
+    event.returnValue = false;          
+}
+
+// Não permitir inspecionar elemento
+
+// window.addEventListener("keydown", ev => {
+//   switch( true ) {
+//     /* Previne F12 */
+//     case ev.keyCode === 123:
+    
+//     /* Previne Ctrl + Shift +  */
+//     case ev.ctrlKey && ev.shiftKey && event.keyCode == 74:
+    
+//     /* Previne Ctrl + U */
+//     case ev.ctrlKey && ev.keyCode == 85:
+//       ev.preventDefault();
+//       return false;
+//   }
+// })
+
+// /* Previne clique direito do mouse */
+// window.addEventListener("contextmenu", ev => {
+//   ev.preventDefault();
+//   return false;
+// });
+
+//Função para filtragem de conteúdos referente ao desaparecido! Tudo USANDO jQUERY.
+
+$(function(){ 
+$("#filtro").keyup(function(){
+  var texto = $(this).val();
+  
+  $(".column").each(function(){
+    var resultado = $(this).text().toUpperCase().indexOf(''+texto.toUpperCase());
+  
+    if(resultado < 0) {
+      $(this).fadeOut();
+    }else {
+      $(this).fadeIn();
+    }
+  }); 
+
+});
+
+});
+    
+//Função para abertura de popUp para cadastro ou login!
+
+let emailLogin = document.querySelector('#emailLogin'); 
+let labelEmailLogin = document.querySelector('#labelEmailLogin'); 
+
+let passwordLogin = document.querySelector('#passwordLogin'); 
+let labelSenhaLogin = document.querySelector('#labelSenhaLogin');
+
+let msgErrorLogin = document.querySelector('#msgErrorLogin');
+let msgSuccessLogin = document.querySelector('#msgSuccessLogin');
+
+
+function iniciaLogin(modalID) {
+const modalLogin = document.getElementById(modalID);
+if(modalLogin) {
+  modalLogin.classList.add('mostrar');
+  modalLogin.addEventListener('click', (e) => {
+if(e.target.id == modalID || e.target.className == 'fechar' ) {
+modalLogin.classList.remove('mostrar');
+emailLogin.value = '';
+passwordLogin.value = '';
+msgErrorLogin.setAttribute('style' , 'display: none');
+msgSuccessLogin.setAttribute('style', 'display: none' );
+}});
+}
+}
+
+function iniciaCadastro(modalID) {
+const modalCadastro = document.getElementById(modalID);
+if(modalCadastro) {
+  modalCadastro.classList.add('mostrar');
+  modalCadastro.addEventListener('click', (e) => {
+if(e.target.id == modalID || e.target.className == 'fechar') {
+modalCadastro.classList.remove('mostrar');  
+nome.value = '';
+emailCadastro.value= '';
+confEmailCadastro.value = '';
+passwordCadastro.value = '';
+confPasswordCadastro.value = '';
+msgErrorCadastro.setAttribute('style' , 'display: none');
+msgSuccessCadastro.setAttribute('style', 'display: none' );
+forcaSenhaExcelente.setAttribute('style', 'display: none')
+forcaSenhaForte.setAttribute('style', 'display: none')
+forcaSenhaMedia.setAttribute('style', 'display: none')
+forcaSenhaFraca.setAttribute('style', 'display: none')
+}});
+}
+}
+
+const login = document.querySelector('.btn-primary');
+const cadastro = document.querySelector('.btn-third');
+
+login.addEventListener('click', () => iniciaLogin('modal-login'))
+cadastro.addEventListener('click', () => iniciaCadastro('modal-cadastro'))
+
+//Função para visualização de senha!
+
+let btnLogin = document.querySelector('#verSenhaLogin')
+let inputSenhaLogin = document.querySelector('#passwordLogin')
+
+  btnLogin.addEventListener('click', () =>{
+  if(inputSenhaLogin.getAttribute('type') == 'password'){
+  inputSenhaLogin.setAttribute('type', 'text');
+  inputSenhaLogin.focus()}
+  else{
+  inputSenhaLogin.setAttribute('type', 'password');
+  inputSenhaLogin.focus()}
+})
+
+let btnCadastro = document.querySelector('#verSenhaCadastro')
+let inputSenhaCadastro = document.querySelector('#passwordCadastro')
+
+  btnCadastro.addEventListener('click', () =>{
+  if(inputSenhaCadastro.getAttribute('type') == 'password'){
+  inputSenhaCadastro.setAttribute('type', 'text');
+  inputSenhaCadastro.focus()}
+  else{
+  inputSenhaCadastro.setAttribute('type', 'password');
+  inputSenhaCadastro.focus()}
+  
+})
+
+let btnConfCadastro = document.querySelector('#verConfSenhaCadastro')
+let inputConfSenhaCadastro = document.querySelector('#confPasswordCadastro')
+
+  btnConfCadastro.addEventListener('click', () =>{
+  if(inputConfSenhaCadastro.getAttribute('type') == 'password'){
+  inputConfSenhaCadastro.setAttribute('type', 'text');
+  inputConfSenhaCadastro.focus();}
+  else{
+  inputConfSenhaCadastro.setAttribute('type', 'password');
+  inputConfSenhaCadastro.focus();}
+  
+})
+
+//Funções de validações
+
+let nome = document.querySelector('#name'); 
+let labelNome = document.querySelector('#labelNome');
+let validNome = false;
+
+let passwordCadastro = document.querySelector('#passwordCadastro'); 
+let labelSenhaCadastro = document.querySelector('#labelSenhaCadastro'); 
+let validSenhaCadastro = false;
+
+let confPasswordCadastro = document.querySelector('#confPasswordCadastro'); 
+let labelConfSenhaCadastro = document.querySelector('#labelConfSenhaCadastro'); 
+let validConfSenhaCadastro = false;
+
+let emailCadastro = document.querySelector('#emailCadastro'); 
+let labelEmailCadastro = document.querySelector('#labelEmailCadastro'); 
+let validEmailCadastro = false;
+
+let confEmailCadastro = document.querySelector('#confEmailCadastro'); 
+let labelConfEmailCadastro = document.querySelector('#labelConfEmailCadastro'); 
+let validConfEmailCadastro = false;
+
+let msgErrorCadastro = document.querySelector('#msgErrorCadastro')
+let msgSuccessCadastro = document.querySelector('#msgSuccessCadastro')
+
+// Validações de nome
+
+document.getElementById('name').addEventListener( 'keyup', function() {
+
+this.value = this.value.replace( /[0-9]*/g, '' );
+
+});
+
+  nome.addEventListener('keyup', () => {
+  if(nome.value.length < 5){
+  labelNome.setAttribute('style', 'color: red')
+  nome.setAttribute('style', 'border-color: red') 
+  validNome = false;}
+  
+  else{
+  labelNome.setAttribute('style', 'color: green')
+  nome.setAttribute('style', 'border-color: green')
+  validNome = true;}
+})
+
+//validações de senha e confirmação de senha
+  
+  passwordCadastro.addEventListener('keyup', () => {
+  if(passwordCadastro.value.length == 0){
+  forcaSenhaFraca.setAttribute('style', 'display: none')
+  forcaSenhaFraca.innerHTML = ''
+  forcaSenhaMedia.setAttribute('style', 'display: none')
+  forcaSenhaForte.setAttribute('style', 'display: none')
+  forcaSenhaExcelente.setAttribute('style', 'display: none')
+  validSenhaCadastro = false;}
+  
+  if(passwordCadastro.value.length < 8){
+  labelSenhaCadastro.setAttribute('style', 'color: red')
+  passwordCadastro.setAttribute('style', 'border-color: red')
+  forcaSenhaFraca.innerHTML = "[fraca]";
+  forcaSenhaFraca.setAttribute('style', 'display: block')
+  forcaSenhaMedia.setAttribute('style', 'display: none')
+  forcaSenhaForte.setAttribute('style', 'display: none')
+  forcaSenhaExcelente.setAttribute('style', 'display: none')
+  validSenhaCadastro = false;}
+
+  if(passwordCadastro.value.length >= 8 && passwordCadastro.value.match(/[a-z]+/)){
+  labelSenhaCadastro.setAttribute('style', 'color: green')
+  passwordCadastro.setAttribute('style', 'border-color: green')
+  forcaSenhaMedia.innerHTML = "[Média]";
+  forcaSenhaMedia.setAttribute('style', 'display: block')
+  forcaSenhaFraca.setAttribute('style', 'display: none')
+  forcaSenhaForte.setAttribute('style', 'display: none')
+  forcaSenhaExcelente.setAttribute('style', 'display: none')
+  validSenhaCadastro = true;}
+
+  if(passwordCadastro.value.length > 9 && passwordCadastro.value.match(/[a-z]+/) && passwordCadastro.value.match(/[A-Z]+/)){
+  labelSenhaCadastro.setAttribute('style', 'color: green')
+  passwordCadastro.setAttribute('style', 'border-color: green')
+  forcaSenhaForte.innerHTML = "[Forte]";
+  forcaSenhaForte.setAttribute('style', 'display: block')
+  forcaSenhaFraca.setAttribute('style', 'display: none')
+  forcaSenhaMedia.setAttribute('style', 'display: none')
+  forcaSenhaExcelente.setAttribute('style', 'display: none')
+  validSenhaCadastro = true;}
+
+  if(passwordCadastro.value.length > 10 && passwordCadastro.value.match(/[a-z]+/) && passwordCadastro.value.match(/[A-Z]+/)
+   && passwordCadastro.value.match(/[@!#$%&*"';/]/)){
+  labelSenhaCadastro.setAttribute('style', 'color: green')
+  passwordCadastro.setAttribute('style', 'border-color: green')
+  forcaSenhaExcelente.innerHTML = "[Excelente]";
+  forcaSenhaExcelente.setAttribute('style', 'display: block')
+  forcaSenhaMedia.setAttribute('style', 'display: none')
+  forcaSenhaFraca.setAttribute('style', 'display: none')
+  forcaSenhaForte.setAttribute('style', 'display: none')
+  validSenhaCadastro = true;}
+
+  if(passwordCadastro.value != confPasswordCadastro.value || confPasswordCadastro.value != passwordCadastro.value){
+  labelConfSenhaCadastro.setAttribute('style', 'color: red')
+  confPasswordCadastro.setAttribute('style', 'border-color: red')}
+
+  else{
+  labelConfSenhaCadastro.setAttribute('style', 'color: green')
+  confPasswordCadastro.setAttribute('style', 'border-color: green')
+  validConfSenhaCadastro = true;}
+  
+})
+
+  confPasswordCadastro.addEventListener('keyup', () => {
+  if(passwordCadastro.value != confPasswordCadastro.value){
+  labelConfSenhaCadastro.setAttribute('style', 'color: red')
+  confPasswordCadastro.setAttribute('style', 'border-color: red')
+  validConfSenhaCadastro = false;}
+  else{
+  labelConfSenhaCadastro.setAttribute('style', 'color: green')
+  confPasswordCadastro.setAttribute('style', 'border-color: green')
+  validConfSenhaCadastro = true;}
+})
+
+// Validações de email e confirmação de email
+
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
+
+  emailCadastro.addEventListener('keyup', () => {
+  if(validateEmail(emailCadastro.value) == false){ 
+  labelEmailCadastro.setAttribute('style', 'color: red')
+  emailCadastro.setAttribute('style', 'border-color: red')
+  validEmailCadastro = false;}
+  else{
+  labelEmailCadastro.setAttribute('style', 'color: green')
+  emailCadastro.setAttribute('style', 'border-color: green')
+  validEmailCadastro = true;}
+
+  if(emailCadastro.value != confEmailCadastro.value || confEmailCadastro.value != emailCadastro.value){ 
+  labelConfEmailCadastro.setAttribute('style', 'color: red')
+  confEmailCadastro.setAttribute('style', 'border-color: red')
+  validConfEmailCadastro = false;}
+  else{
+  labelConfEmailCadastro.setAttribute('style', 'color: green')
+  confEmailCadastro.setAttribute('style', 'border-color: green')
+  validConfEmailCadastro = true;}
+
+})
+
+  confEmailCadastro.addEventListener('keyup', () => {
+  if(emailCadastro.value != confEmailCadastro.value || confEmailCadastro.value != emailCadastro.value){ 
+  labelConfEmailCadastro.setAttribute('style', 'color: red')
+  confEmailCadastro.setAttribute('style', 'border-color: red')
+  validConfEmailCadastro = false;}
+  else{
+  labelConfEmailCadastro.setAttribute('style', 'color: green')
+  confEmailCadastro.setAttribute('style', 'border-color: green')
+  validConfEmailCadastro = true;}
+})
+
+
+//Cadastrando usuário no LocalStorage
+  
+function cadastrar(){
+
+if(validNome && validSenhaCadastro && validConfEmailCadastro && validConfSenhaCadastro && validEmailCadastro){
+let listaUserCadastro = JSON.parse(localStorage.getItem('listaUserCadastro') || '[]')
+listaUserCadastro.push(
+  {
+    nome: nome.value,
+    email: emailCadastro.value,
+    senha: passwordCadastro.value
+  }
+)
+
+localStorage.setItem('listaUserCadastro', JSON.stringify(listaUserCadastro))
+
+let emailIgual = JSON.parse(localStorage.getItem('listaUserCadastro'))
+
+ msgSuccessCadastro.setAttribute('style', 'display: block')
+ msgSuccessCadastro.innerHTML = 'Cadastrado!'
+ msgErrorCadastro.setAttribute('style', 'display: none')
+ msgErrorCadastro.innerHTML = ''}
+ else{
+
+ msgErrorCadastro.setAttribute('style', 'display: block')
+ msgErrorCadastro.innerHTML = 'Preencha os campos corretamente...'
+ msgSuccessCadastro.setAttribute('style', 'display: none')
+ msgSuccessCadastro.innerHTML = ''
+ nome.focus()}
+ nome.value = '';
+ emailCadastro.value = '';
+ confEmailCadastro.value = '';
+ passwordCadastro.value = '';
+ confPasswordCadastro.value = '';
+ forcaSenhaExcelente.setAttribute('style', 'display: none')
+ forcaSenhaForte.setAttribute('style', 'display: none')
+ forcaSenhaMedia.setAttribute('style', 'display: none')
+ forcaSenhaFraca.setAttribute('style', 'display: none')
+
+}
+
+//Validando usuários no LocalStorage
+
+function logar(){
+let listaUserLogin = [];
+let LoginValid = {
+  nome: '',
+  emailLogin: '',
+  passwordLogin: ''
+}
+
+listaUserLogin = JSON.parse(localStorage.getItem('listaUserCadastro'))
+
+listaUserLogin.forEach((item) => {
+  if(emailLogin.value == item.email && passwordLogin.value == item.senha){
+    LoginValid = {
+      nome: item.nome,
+      emailLogin: item.email,
+      passwordLogin: item.senha
+    }
+  }
+})
+
+if(emailLogin.value == LoginValid.emailLogin && passwordLogin.value == LoginValid.passwordLogin && emailLogin.value != '' && passwordLogin != ''){
+
+ window.location.href = "./indexLogado.html" 
+
+ let token = Math.random().toString(16).substr(2)
+ localStorage.setItem('token', token)
+ msgSuccessLogin.innerHTML = "Logado com sucesso"
+ msgSuccessLogin.setAttribute('style', 'display: block')
+ msgErrorLogin.setAttribute('style', 'display: none')
+ msgErrorLogin.innerHTML = ''
+
+}
+else if(emailLogin.value == '' || passwordLogin.value == '') {
+  labelEmailLogin.setAttribute('style', 'color: red')
+  emailLogin.setAttribute('style', 'border-color: red')
+  passwordLogin.setAttribute('style', 'border-color: red')
+  labelSenhaLogin.setAttribute('style', 'color: red')
+  msgErrorLogin.setAttribute('style', 'display: block')
+  msgSuccessLogin.setAttribute('style', 'display: none')
+  msgErrorLogin.innerHTML = 'Preencha todos os campos'
+  msgSuccessLogin.innerHTML = ''
+  emailLogin.focus()
+  emailLogin.value = ''
+  passwordLogin.value = ''
+}
+else{
+  labelEmailLogin.setAttribute('style', 'color: red')
+  emailLogin.setAttribute('style', 'border-color: red')
+  passwordLogin.setAttribute('style', 'border-color: red')
+  labelSenhaLogin.setAttribute('style', 'color: red')
+  msgErrorLogin.setAttribute('style', 'display: block')
+  msgSuccessLogin.setAttribute('style', 'display: none')
+  msgErrorLogin.innerHTML = 'E-mail ou Senha Inválido'
+  msgSuccessLogin.innerHTML = ''
+  emailLogin.focus()
+  emailLogin.value = ''
+  passwordLogin.value = ''
+}
+}
+</script>
+<script type="text/javascript" src="../js/index.js"></script>
+<style>
+  .modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container.mostrar {
+    display: flex;
+}
+
+#fecharSenha{
+     display: none;
+}
+
+.modal {
+    background:#ffffff ;
+    padding: 60px;
+    border-radius: 15%;
+    border: 10px solid #daa520c0;
+    border-radius: 15%;
+    position: relative;
+    bottom: 100px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    box-shadow: 3px 3px 1px 0px #000000b7;
+
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.container-login{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.card-login{
+    background-color: #daa52036;
+    padding: 60px;
+    border-radius: 10%;
+    box-shadow: 3px 3px 1px 0px #00000062;
+
+}
+
+.card-login h2{
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 0 0 #DAA520,
+     -2px 0 0 #DAA520,
+      0 2px 0 #DAA520,
+       0 -2px 0 #DAA520,
+        1px 1px #DAA520,
+         -1px -1px 0 #DAA520,
+          1px -1px 0 #DAA520,
+           -1px 1px 0 #DAA520;   
+}
+
+.card-login h1{
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 0 0 #DAA520,
+     -2px 0 0 #DAA520,
+      0 2px 0 #DAA520,
+       0 -2px 0 #DAA520,
+        1px 1px #DAA520,
+         -1px -1px 0 #DAA520,
+          1px -1px 0 #DAA520,
+           -1px 1px 0 #DAA520;   
+}
+
+.text-count h2{
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #000000;
+    background-size: 100%;
+    color: #FFF;
+    text-shadow: none !important;
+}
+
+.label-float input{
+    width: 100%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px solid #000000;
+    background-color: transparent;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    border-radius: 0%;
+}
+
+.label-float{
+    position:relative;
+    padding-top: 13px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.label-float input:focus{
+    border-bottom: 2px solid #5f5f5e73;
+}
+
+.label-float label{
+    text-shadow: 2px 0 0 #daa52083,
+     -2px 0 0 #daa52083,
+      0 2px 0 #daa52083,
+       0 -2px 0 #daa52083,
+        1px 1px #daa52083,
+         -1px -1px 0 #daa52083,
+          1px -1px 0 #daa52083,
+           -1px 1px 0 #daa52083;  
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition:all .3s ease-out; 
+
+}
+
+.label-float input:focus + label,
+.label-float input:valid + label{
+    font-size: 13px;
+    margin-top: 0;
+    color: #5f5f5e73;
+}
+
+.justify-center{
+    display: flex;
+    justify-content: center;
+}
+
+.justify-center hr{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.p-change{
+   color: #000000b0;
+   font-size: 14pt;
+   text-align: center;
+}
+
+.p-change a{
+    color:#8f6565;
+    font-weight: bold;
+}
+
+.p-change a:hover{
+    color:#ff7c7c;
+    transition:all .3s ease-out
+}
+
+
+.label-float input:focus + label{
+    font-size: 13px;
+    margin-top: 0;
+    color: #5f5f5e73
+}
+
+.mostrar .modal {
+    animation: modal .3s;
+}
+
+.fechar {
+    position: absolute;
+    font-size: 1.2em;
+    top: -30px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid rgb(0, 0, 0);
+    background:#DAA520;
+    color: rgb(0, 0, 0);
+    font-family: "PT Mono", monospace;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+}
+body {
+margin: 0;
+background: rgb(255, 251, 251);
+font-family: 'Work Sans', sans-serif;
+font-weight: 800;
+}
+
+#logo {
+width: 120px;
+height: 50px;
+margin-right: 800px;
+margin-top: 10px;
+}
+
+#filtro {
+background-position: 10px 10px;
+background-repeat: no-repeat;
+width: 100%;
+font-size: 16px;
+padding: 12px 20px 12px 40px;
+border: 1px solid #ddd;
+margin-bottom: 12px;
+font-style: italic;
+color: #000000;
+border-color:#DAA520;
+
+}
+
+.flip-card-text p{
+font-size: 20px !important;
+font-style: normal !important;
+font-stretch: condensed;
+}
+.flip-card-text h1{
+font-size: 20px !important;
+font-style: italic;
+}
+.flip-card-text a{
+
+border-radius: 60%;
+font-size: 20px !important;
+text-shadow: 2px 0 0 #DAA520, -2px 0 0 #DAA520, 0 2px 0 #DAA520, 0 -2px 0 #DAA520, 1px 1px #DAA520, -1px -1px 0 #DAA520, 1px -1px 0 #DAA520, -1px 1px 0 #DAA520;
+}
+.flip-card-back p, .flip-card-back a {
+font-size: 11px;
+}
+
+.flip-card-back a{
+color: red !important;
+font-style: normal;
+}
+
+.flip-card-back h1{
+font-size: 14px;
+}
+
+.container {
+width: 80%;
+margin: 0 auto;
+}
+
+header {
+background: #000000;
+}
+
+header::after {
+content: '';
+display: table;
+clear: both;
+}
+
+.flip-card-front img{
+height: 325px;
+width: 100%;
+}
+
+.logo {
+float: left;
+padding: 10px 0;
+}
+
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+header{
+width: 100%;
+background-color: #000000;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 15px 0;
+}
+.logo-imagem{
+width: 50px !important;
+height: 50px !important;
+}
+.container-logo{
+display: flex;
+align-items: center;
+}
+.logo-text{
+margin-left: 20px;
+padding-left: 30px;
+color: #DAA520
+}
+.menu li{
+display: inline-block;
+margin: 0 20px;
+}
+.menu li a{
+font-size: 20px;
+text-decoration:none;
+color: #DAA520;
+padding: 10px 15px;
+}
+
+.menu li a:hover {
+color: rgb(255, 255, 255);
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+background-color: transparent;
+width: 225px;
+height: 290px;
+perspective: 1000px;
+}
+
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.6s;
+transform-style: preserve-3d;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+width: 250px;
+height: 325px;
+
+}
+
+.flip-card:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+position: absolute;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.flip-card-front {
+background-color: rgb(0, 0, 0);
+color: black;
+}
+
+.flip-card-back {
+background-color:#daa52050;
+color: rgb(0, 0, 0);
+transform: rotateY(180deg);
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.column {
+float: left;
+width: 25%;
+padding: 0 10px;
+width: 320px;
+}
+
+.columnUser{
+float: left;
+width: 25%;
+padding: 0 10px;
+width: 320px;
+}
+
+.row {
+margin: 0 -5px;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Colunas*/
+@media screen and (max-width: 900px) {
+.column {
+width: 100%;
+display: block;
+margin-bottom: 20px;
+}
+}
+
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+padding: 16px;
+text-align: center;
+background-color: #f1f1f1;
+}
+
+.btn {
+border-radius: 20px;
+color:#000000;
+font-size: 12px;
+padding: 10px 40px;
+cursor: pointer;
+font-weight: bold;
+width: 110px;
+align-self: center;
+align-items: center;
+border: none;
+margin-top: 5px;
+display:inline-block;
+}
+.btn-primary {
+background-color:#DAA520;
+border: 1px solid #DAA520;
+transition: background-color .5s;
+}
+.btn-primary:hover {
+background-color:#000000;
+color:#f1f1f1;
+}
+
+.btn-secondary {
+    background-color:rgb(0, 0, 0);
+    border: 2px solid #DAA520;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color .5s;  
+    width: 150px; 
+}
+
+.btn-secondary:hover {
+    background-color:#DAA520;
+    color:#000000;
+    }
+
+    .p-change button{
+    background-color: transparent;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #8f6565;
+    margin-right: 50px;
+}
+
+.fa-eye{
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#forcaSenhaFraca{
+    position: absolute ;
+    top: -5px ;
+    right: 10px ;
+    padding-right: 30px ;
+    display: none;
+    font-size: 10px !;
+    color: #ff0000;
+}
+
+#forcaSenhaMedia{
+  position: absolute ;
+    top: -5px ;
+    right: 10px ;
+    padding-right: 30px ;
+    display: none;
+    font-size: 10px !;
+    color: #ff7b00;
+}
+
+#forcaSenhaForte{
+  position: absolute ;
+    top: -5px ;
+    right: 10px ;
+    padding-right: 30px ;
+    display: none;
+    font-size: 10px !;
+    color: #86f13e;
+}
+
+
+#forcaSenhaExcelente{
+  position: absolute ;
+    top: -5px ;
+    right: 10px ;
+    padding-right: 30px ;
+    display: none;
+    font-size: 10px !;
+    color: #016e06;
+}
+
+
+#msgErrorCadastro{
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+
+#msgSuccessCadastro{
+    text-align: center;
+    color: #00bb00;
+    background-color: #bbffbe;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+
+#msgErrorLogin{
+    text-align: center;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+  }
+  
+  
+  #msgSuccessLogin{
+      text-align: center;
+      color: #00bb00;
+      background-color: #bbffbe;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+  }
+</style>
+  </body>
+</html>

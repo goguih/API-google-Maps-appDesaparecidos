@@ -4,220 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" type="imagem/png" href="https://i.imgur.com/xTOFzOY.png"/>
+  <link rel="icon" type="imagem/png" href="https://i.imgur.com/llFftiv.png"/>
+  <link rel="stylesheet" href="../css/mapaDesaparecidos.css">
   <title>Última Localização</title>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1 class="logo"></h1>
-  
-      <nav>
-        <ul>     
-          <li><a href="index.html">Desaparecidos</a></li>
-          <li><a href="mapaConcentraçãoDesaparecimento.html">Concentração Desaparecidos</a></li>
-        </ul>
-      </nav>
+    <div class="container-logo">
+      <div class="logo-imagem">
+        <img src="https://i.imgur.com/Zf92voQ.gif" alt="" style="height: 60px; width: 100px;">
+      </div>
+       <div class="logo-text">
+       <h1>OBSOL - Solução em observação</h1>
+      </div>
+    
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li> <a href="./indexLogado.html">Desaparecidos</a></li>
+        <li><a href="./mapaConcentraçãoDesaparecimento.html">Concentração desaparecidos</a></li>
+        <li><a href="./denuncias.html">Denúncias</a></li>
+        <button type="submit" class="btn btn-primary" onclick="deslogar()">Sair</button>
+      </ul>
+      
     </div>
   </header>
-  <div id="map"></div>
-  <script>
-    function initMap(){
-      const mapaInicial = {lat: -22.76926520019462, lng: -47.10547175436898}
-      // Map options
-      var options = {
-        zoom:11,
-        center: mapaInicial, 
-        disableDefaultUI : true, // desabilitar controles
-        //remover todos os pontos de interesse
-          styles:[{
-      "featureType": "poi",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }]
-      }
+ 
+  <section class="corpo">
 
-      // New map
-      var map = new google.maps.Map(document.getElementById('map'), options);
+    <div class="conteudoCorpo">
+      <div class="conteudo">
 
-      // Listen for click on map
-      //google.maps.event.addListener(map, 'click', function(event){
-        // Add marker
-        //addMarker({coords:event.latLng});
-      //});
+          <iframe class="conteudoVideo" 
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen></iframe>
 
-      /*
-      // Add marker
-      var marker = new google.maps.Marker({
-        position:{lat:42.4668,lng:-70.9495},
-        map:map,
-        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-      });
+         <figcaption class="cep">
+          <h1></h1>
+          <h1></h1>
+          <h1></h1>
+        </figcaption>
 
-      var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>Lynn MA</h1>'
-      });
+        <img class="img" >
+          
+      </div>
 
-      marker.addListener('click', function(){
-        infoWindow.open(map, marker);
-      });
-      */
-      // Array of markers
-      var markers = [
-        {
-          id:1,
-          coords:{lat: -22.92100424428484, lng: -47.06657208265851},
-          iconImage:'https://i.imgur.com/6BEAKwI.png?2',
-          content:'<h1>Lourenço Testa</h1>'
-        },
-        {
-          id:2,
-          coords:{lat: -22.72018305963991, lng: -47.17336480414067},
-          iconImage:'https://i.imgur.com/6BEAKwI.png?2',
-          content:'<h1>Guilherme de Oliveira</h1>'
-        },
-        {
-          id:3,
-          coords:{lat: -22.884629006539484, lng: -47.19604291427772},  
-          iconImage:'https://i.imgur.com/6BEAKwI.png?2',
-          content:'<h1>Carlos Augusto</h1>'
-        },
-        {
-          id:4,
-          coords:{lat: -22.892827722134097, lng: -47.015219547940745},
-          iconImage:'https://i.imgur.com/6BEAKwI.png?2',
-          content:'<h1>Yuri Fernando</h1>'
-        },
+    <div id="map">
+    <script>
+    </script>
+      </div>
+      </div>
 
-      
-      ];
-
-      // Loop through markers
-      for(var i = 0;i < markers.length;i++){
-        // Add marker
-        addMarker(markers[i]);
-      }
-
-      // Add Marker Function
-      function addMarker(props){
-        var marker = new google.maps.Marker({
-          position:props.coords,
-          map:map,
-          //icon:props.iconImage
-        });
-
-        // Check for customicon
-        if(props.iconImage){
-          // Set icon image
-          marker.setIcon(props.iconImage);
-        }
-
-        // Check content
-        if(props.content){
-          var infoWindow = new google.maps.InfoWindow({
-            content:props.content
-          });
-
-          marker.addListener('click', function(){
-            infoWindow.open(map, marker);
-          });
-        }
-      }
-    }
-  </script>
+  </section>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDO9a7PunmwVn12eK-_0qxT1xOwuU3UV0o&callback=initMap">
     </script>
-  
-
-    <style>
-
-#map{
-  height:850px;
-  width:1100px;
-}
-
-body {
-margin: 0;
-background: rgb(255, 251, 251);
-font-family: 'Work Sans', sans-serif;
-font-weight: 800;
-}
-
-nav a:hover {
-color: rgb(255, 255, 255);
-}
-
-nav a::before {
-content: '';
-display: block;
-height: 5px;
-background-color: rgb(250, 250, 250);
-
-position: absolute;
-top: 0;
-width: 0%;
-
-transition: all ease-in-out 250ms;
-}
-
-nav a:hover::before {
-width: 100%;
-}
-* {
-  box-sizing: border-box;
-}
-
-body {
-font-family: Arial, Helvetica, sans-serif;
-}
-
-.container {
-width: 80%;
-margin: 0 auto;
-}
-
-header {
-background: #000000;
-}
-
-header::after {
-content: '';
-display: table;
-clear: both;
-}
-
-.logo {
-float: left;
-padding: 10px 0;
-}
-
-nav {
-float: right;
-}
-
-nav ul {
-margin: 0;
-padding: 0;
-list-style: none;
-}
-
-nav li {
-display: inline-block;
-margin-left: 70px;
-padding-top: 23px;
-
-position: relative;
-}
-
-nav a {
-color: rgb(207, 0, 0);
-text-decoration: none;
-text-transform: uppercase;
-font-size: 14px;
-}
-</style>
-
+    <script text="text/javascript" src="../js/mapaDesaparecidos.js"></script>
 </body>
 </html>
