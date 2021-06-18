@@ -1,0 +1,147 @@
+.columnUser{
+    display: none;
+}
+body {
+margin: 0;
+background: rgba(226, 189, 164, 0.397);
+font-family: 'Work Sans', sans-serif;
+font-weight: 800;
+}
+
+
+.container-login{
+display: flex;
+justify-content: center;
+width: 100%;
+margin-top: 10px;
+
+}
+
+.card-login{
+background-color: #97948a5e;
+padding: 10%;
+border-radius: 10%;
+box-shadow: 3px 3px 1px 0px #00000062;
+
+}
+
+.card-login h2{
+text-align: center;
+margin-bottom: 20px;
+
+}
+
+.card-login h1{
+text-align: center;
+margin-bottom: 20px;
+ 
+}
+
+.text-count h2{
+text-align: center;
+margin-bottom: 20px;
+margin-top: -150px;
+background-color: #000000;
+background-size: 100%;
+color: rgb(187, 20, 20);
+text-shadow: none !important;
+}
+
+.label-float input{
+width: 100%;
+padding: 5px 5px;
+display: inline-block;
+border: 10px;
+border-bottom: 2px solid #000000;
+outline: none;
+min-width: 180px;
+font-size: 16px;
+transition: all .3s ease-out;
+border-radius: 20%;
+}
+
+.label-float{
+position:relative;
+padding-top: 13px;
+margin-top: 5%;
+margin-bottom: 5%;
+}
+
+.justify-center{
+display: flex;
+justify-content: center;
+}
+
+.justify-center hr{
+margin-top: 10%;
+margin-bottom: 10%;
+width: 100%;
+}
+
+.p-change{
+color: #000000b0;
+font-size: 14pt;
+text-align: center;
+}
+
+.btn {
+border-radius: 20px;
+color:#000000;
+font-size: 12px;
+padding: 10px 40px;
+cursor: pointer;
+font-weight: bold;
+width: 110px;
+align-self: center;
+align-items: center;
+border: none;
+margin-top: 5px;
+display:inline-block;
+}
+.btn-primary {
+background-color:#DAA520;
+border: 1px solid #DAA520;
+transition: background-color .5s;
+width: 150px;
+font-weight: bold ;
+margin-top: 20px;
+margin-left: 20px;
+}
+.btn-primary:hover {
+background-color:#000000;
+color:#f1f1f1;
+}
+
+.btn-secondary {
+background-color:rgb(0, 0, 0);
+border: 2px solid #DAA520;
+color: #ffffff;
+font-weight: bold;
+margin-top: 20px;
+transition: background-color .5s;  
+width: 150px; 
+}
+
+.btn-secondary:hover {
+background-color:#DAA520;
+color:#000000;
+}
+
+#msgErrorCadastro{
+text-align: center;
+color: #ff0000;
+background-color: #ffbbbb;
+padding: 10px;
+border-radius: 4px;
+display: none;
+}
+
+
+#msgSuccessCadastro{
+text-align: center;
+color: #00bb00;
+background-color: #bbffbe;
+padding: 10px;
+border-radius: 4px;
+display: none;
+}

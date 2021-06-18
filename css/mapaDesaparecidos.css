@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  header{
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+  }
+  .logo-imagem{
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .container-logo{
+    display: flex;
+    align-items: center;
+  }
+  .logo-text{
+    margin-left: 20px;
+    padding-left: 30px;
+    color: #DAA520
+  }
+  .menu li{
+    display: inline-block;
+    margin: 0 20px;
+  }
+  .menu li a{
+    font-size: 20px;
+    text-decoration:none;
+    color: #DAA520;
+    padding: 10px 15px;
+  }
+  
+  .menu li a:hover {
+      color: rgb(255, 255, 255);
+    }
+        
+  #logo{
+  width: 120px;
+  height: 50px;
+  margin-right: 800px;
+  margin-top: 10px;
+  }
+  
+  .img{
+    position: absolute;
+    right: 425px;
+    height: 380px;
+    width: 380px;
+    top: 580px;
+  }
+  
+  .conteudoCorpo{
+    display: table;
+  }
+  
+  .conteudo{
+    display: table-cell;
+    float: right;
+    margin-left: 402px;
+    margin-top: 50px;
+  }
+  .conteudoVideo{
+    display: table-cell;
+    float: right;
+    height:400px;
+    width: 200%;
+    margin-left: 100px; 
+  }
+  
+  
+  #map{
+    display: table-cell;
+    height:905px;
+    width:1100px;
+    float: left;
+  }
+  
+  body {
+  margin: 0;
+  background: rgb(255, 255, 255);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+  }
+  
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .container {
+  width: 80%;
+  margin: 0 auto;
+  }
+  
+  
+  .logo {
+  float: left;
+  padding: 10px 0;
+  }
+  .btn {
+  border-radius: 20px;
+  color:#000000;
+  font-size: 12px;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 110px;
+  align-self: center;
+  align-items: center;
+  border: none;
+  margin-top: 5px;
+  display:inline-block;
+  }
+  .btn-primary {
+  background-color:#DAA520;
+  border: 1px solid #DAA520;
+  transition: background-color .5s;
+  }
+  .btn-primary:hover {
+  background-color:#000000;
+  color:#f1f1f1;
+  }
